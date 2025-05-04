@@ -60,20 +60,7 @@
     }
 
    
-    @keyframes scroll {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-.skills-slider {
-  overflow: hidden;
-  background: #0e0e2c;
-  padding: 10px 0;
-}
-
+    
 .slider-track {
   display: inline-block;
   white-space: nowrap;
@@ -525,11 +512,46 @@ font-weight: 600;
       cancelButtonText: 'Cancel'
     }).then((result) => {
       if (result.isConfirmed) {
-        feedbackForm.submit(); // Let FormSubmit handle it
+        const formData = new FormData(feedbackForm);
+
+        fetch('https://formsubmit.co/ajax/surya.logitra@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Thank you!',
+              text: 'Your feedback has been submitted successfully.',
+              confirmButtonColor: '#3b82f6'
+            });
+            feedbackForm.reset();
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Submission failed',
+              text: 'Something went wrong. Please try again later.',
+              confirmButtonColor: '#d33'
+            });
+          }
+        })
+        .catch(() => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Network Error',
+            text: 'Please check your internet connection.',
+            confirmButtonColor: '#d33'
+          });
+        });
       }
     });
   });
 </script>
+
 
 </body>
 
