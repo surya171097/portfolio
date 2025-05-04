@@ -455,6 +455,8 @@ font-weight: 600;
   <script>
     AOS.init({ duration: 1000 });
   </script>
+<!-- HTML stays the same -->
+
 <script>
   const feedbackForm = document.getElementById('feedbackForm');
 
@@ -472,38 +474,7 @@ font-weight: 600;
       cancelButtonText: 'Cancel'
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: 'Submitting...',
-          allowOutsideClick: false,
-          didOpen: () => {
-            Swal.showLoading();
-          }
-        });
-
-        fetch(feedbackForm.action, {
-          method: 'POST',
-          body: new FormData(feedbackForm)
-        })
-        .then(() => {
-          Swal.fire({
-            icon: 'success',
-            title: 'Thank you!',
-            text: 'Your feedback has been submitted successfully.',
-            timer: 2000,
-            showConfirmButton: false
-          });
-
-          feedbackForm.reset();
-          setTimeout(fetchReviews, 3000); // Update reviews after 3s
-        })
-        .catch((error) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops!',
-            text: 'Something went wrong. Please try again later.'
-          });
-          console.error('Error!', error.message);
-        });
+        feedbackForm.submit(); // Let FormSubmit handle it
       }
     });
   });
