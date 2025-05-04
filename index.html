@@ -20,6 +20,36 @@
       background: #f8f9fa;
       color: #333;
     }
+.skills-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background: #0e0e2c;
+  padding: 10px 0;
+}
+
+.slider-track {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+
+.slider-track span {
+  display: inline-block;
+  color: #00ffff;
+  font-weight: 600;
+  padding: 0 40px;
+  font-size: 1.1rem;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
     header {
       background: #1a1a2e;
@@ -29,27 +59,7 @@
       position: relative;
     }
 
-    .skills-slider {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-      height: 30px;
-    }
-
-    .slider-track {
-      display: flex;
-      animation: scroll 20s linear infinite;
-    }
-
-    .slider-track span {
-      margin: 0 30px;
-      font-size: 1.1rem;
-      color: #00f7ff;
-      white-space: nowrap;
-    }
-
+   
     @keyframes scroll {
       0% {
         transform: translateX(100%);
@@ -58,6 +68,34 @@
         transform: translateX(-100%);
       }
     }
+.skills-slider {
+  overflow: hidden;
+  background: #0e0e2c;
+  padding: 10px 0;
+}
+
+.slider-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+.slider-track span {
+  display: inline-block;
+  color: #00ffff;
+  font-weight: 600;
+  padding: 0 40px;
+  font-size: 1.1rem;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
     .about-section {
       padding: 50px 20px;
@@ -249,18 +287,31 @@ font-weight: 600;
   <header>
     <h1>Hi, I'm Surya — Logistics Expert & Data Analyst</h1>
     <div class="skills-slider">
-      <div class="slider-track">
-        <span>Excel</span>
-        <span>Power BI</span>
-        <span>SQL</span>
-        <span>Data Visualization</span>
-        <span>Dashboard Design</span>
-        <span>Logistics Analytics</span>
-        <span>Inventory Management</span>
-        <span>Presentation Skills</span>
-        <span>Web Development</span>
-      </div>
-    </div>
+      <div class="skills-slider">
+  <div class="slider-track">
+    <span>Excel</span>
+    <span>Power BI</span>
+    <span>SQL</span>
+    <span>Data Visualization</span>
+    <span>Dashboard Design</span>
+    <span>Logistics Analytics</span>
+    <span>Inventory Management</span>
+    <span>Presentation Skills</span>
+    <span>Web Development</span>
+
+    <!-- Duplicate items for seamless loop -->
+    <span>Excel</span>
+    <span>Power BI</span>
+    <span>SQL</span>
+    <span>Data Visualization</span>
+    <span>Dashboard Design</span>
+    <span>Logistics Analytics</span>
+    <span>Inventory Management</span>
+    <span>Presentation Skills</span>
+    <span>Web Development</span>
+  </div>
+</div>
+
   </header>
 
   <section class="about-section" id="about">
