@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surya's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: #1a1a2e;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .skills-slider {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      height: 30px;
+    }
+
+    .slider-track {
+      display: flex;
+      animation: scroll 20s linear infinite;
+    }
+
+    .slider-track span {
+      margin: 0 30px;
+      font-size: 1.1rem;
+      color: #00f7ff;
+      white-space: nowrap;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .about-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #1a1a2e;
+    }
+
+    .about-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .about-card {
+      width: 280px;
+      padding: 30px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: 0.4s;
+      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    }
+
+    .about-card:hover {
+  transform: translateY(-10px);
+  background: #FFA500; /* Saffron-like orange */
+  color: #000;
+}
+.about-card:hover p {
+  color: #000; /* Ensures text is readable */
+}
+
+
+    .about-card p {
+      font-size: 0.95rem;
+      color: #333;
+font-weight: 600; 
+    }
+
+    .projects-section {
+      padding: 60px 20px;
+      background: #fff;
+    }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #1a1a2e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #00f7ff;
+  color: #000;
+}
+
+
+    .projects-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .project {
+      max-width: 800px;
+      background: #f4f4f4;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .project iframe,
+    .project img {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a2e;
+      color: white;
+      margin-top: 40px;
+    }
+.whatsapp-container {
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Center the button horizontally */
+            padding: 10px 0; /* Add some padding around the button */
+            background-color: white; /* Optional: Add a background color for better visibility */
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+
+        .whatsapp-float {
+            position: static !important; /* Override fixed positioning */
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 15px; /* Add some horizontal margin */
+        }
+
+        .whatsapp-float img {
+            height: 20px;
+            width: 20px;
+        }
+
+        /* Mobile Adjustments (you might need to tweak these) */
+        @media screen and (max-width: 768px) {
+            .whatsapp-float {
+                font-size: 14px;
+                padding: 10px 16px;
+                margin: 0 10px;
+            }
+            .whatsapp-container {
+                padding: 8px 0;
+            }
+        }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Hi, I'm Surya — Logistics Expert & Data Analyst</h1>
+    <div class="skills-slider">
+      <div class="slider-track">
+        <span>Excel</span>
+        <span>Power BI</span>
+        <span>SQL</span>
+        <span>Data Visualization</span>
+        <span>Dashboard Design</span>
+        <span>Logistics Analytics</span>
+        <span>Inventory Management</span>
+        <span>Presentation Skills</span>
+        <span>Web Development</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="about-section" id="about">
+    <h2 style="font-size: 2.8rem; font-weight: 800; color: #1a1a2e; position: relative; display: inline-block; padding-bottom: 12px;">
+  <i class="fas fa-user-circle" style="color: #FFA500; margin-right: 10px;"></i> About Me
+  <span style="position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; height: 4px; width: 60%; background-color: #FFA500; border-radius: 2px;"></span>
+</h2>
+
+    <div class="about-cards">
+      <div class="about-card" data-aos="zoom-in">
+        <p>Experienced Data Analyst with a strong foundation in data analysis, visualization, and data management.</p>
+      </div>
+      <div class="about-card" data-aos="zoom-in">
+        <p>Specialized in Excel, Power BI, and SQL with expertise in handling diverse logistics datasets.</p>
+      </div>
+      <div class="about-card" data-aos="zoom-in">
+        <p>Consistently learning and upgrading skills to stay aligned with latest industry trends.</p>
+      </div>
+      <div class="about-card" data-aos="zoom-in">
+        <p>Effective in tackling real-world data challenges and delivering business value.</p>
+      </div>
+      <div class="about-card" data-aos="zoom-in">
+        <p>Strong focus on impactful presentation skills to elevate deliverables.</p>
+      </div>
+      <div class="about-card" data-aos="zoom-in">
+        <p>I appreciate professionals taking time to explore my profile and projects.</p>
+      </div>
+      <div class="about-card" data-aos="zoom-in">
+        <p>Looking forward to connecting and exploring data-driven opportunities.</p>
+      </div>
+      <div class="about-card" data-aos="zoom-in">
+        <p>Sincere gratitude to everyone reviewing my portfolio. Let’s connect!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section" id="projects">
+  <div style="text-align: center;">
+  <h2 style="font-size: 2.8rem; font-weight: 800; color: #1a1a2e; position: relative; display: inline-block; padding-bottom: 12px;">
+    <i class="fas fa-diagram-project" style="color: #FFA500; margin-right: 10px;"></i> My Projects
+    <span style="position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; height: 4px; width: 60%; background-color: #FFA500; border-radius: 2px;"></span>
+  </h2>
+</div>
+
+
+  <div class="projects-grid">
+    
+    <div class="project-card" data-aos="fade-up">
+      <img src="p1.png" alt="Logistics Website">
+      <div class="project-content">
+        <h3>Real-time Logistics Website</h3>
+        <p>Built a logistics website with vehicle tracking & instant shipment updates. Ensures real-time delivery visibility & client transparency.</p>
+        <a href="https://surya171097.github.io/LOGITRASOLUTIONS/" target="_blank" class="btn">View Website</a>
+      </div>
+    </div>
+
+    <div class="project-card" data-aos="fade-up">
+      <img src="p2.png" alt="Q4 Report">
+      <div class="project-content">
+        <h3>Q4 Logistics Performance Report</h3>
+        <p>Analyzed logistics performance of ABC XYZ for Q4: 42,343 boxes, 8 cities, ₹85.13 Cr in value. Delivered actionable insights & 100% inventory retention.</p>
+        <a href="https://github.com/surya171097/Q4-report/blob/main/ABC%20Q4%20full%20analyzed%20report.pdf" target="_blank" class="btn">View Report</a>
+      </div>
+    </div>
+
+    <div class="project-card" data-aos="fade-up">
+      <img src="p3.png" alt="Inventory Tracker">
+      <div class="project-content">
+        <h3>Stock Inventory Tracker for Small businesses</h3>
+        <p>Excel-based stock tracking tool with dynamic dashboards for warehouse teams. No macros used – fully formula-powered.</p>
+        <a href="https://github.com/surya171097/inventorytracker" target="_blank" class="btn">View Excel Tool</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Include SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Feedback Form Section -->
+<section style="margin-top: 40px; padding: 40px 20px;">
+  <h2 style="text-align:center; margin-bottom:20px; font-size: 32px; font-weight: 800; color: #1e3a8a;">Share Your Feedback</h2>
+
+  <div style="
+    max-width: 550px; 
+    margin: auto; 
+    padding: 30px; 
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe); 
+    border: 1px solid #e2e8f0; 
+    border-radius: 16px; 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+  " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+  
+    <form id="feedbackForm" action="https://formsubmit.co/surya.logitra@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
+      
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Feedback Received!">
+
+      <input 
+        type="text" 
+        name="Name" 
+        id="name" 
+        placeholder="Enter Your Name" 
+        required 
+        style="
+          padding: 14px; 
+          border: 1px solid #d1d5db; 
+          border-radius: 10px; 
+          font-size: 15px;
+          background: #ffffff; 
+          transition: 0.3s;
+        " 
+        onfocus="this.style.borderColor='#3b82f6'; this.style.boxShadow='0 0 0 4px #bfdbfe';" 
+        onblur="this.style.borderColor='#d1d5db'; this.style.boxShadow='none';"
+      >
+      
+      <select 
+        name="Rating" 
+        id="rating" 
+        required 
+        style="
+          padding: 14px; 
+          border: 1px solid #d1d5db; 
+          border-radius: 10px; 
+          font-size: 15px;
+          background: #ffffff; 
+          transition: 0.3s;
+        " 
+        onfocus="this.style.borderColor='#3b82f6'; this.style.boxShadow='0 0 0 4px #bfdbfe';" 
+        onblur="this.style.borderColor='#d1d5db'; this.style.boxShadow='none';"
+      >
+        <option value="">Select Rating</option>
+        <option value="5">⭐️⭐️⭐️⭐️⭐️ Excellent</option>
+        <option value="4">⭐️⭐️⭐️⭐️ Very Good</option>
+        <option value="3">⭐️⭐️⭐️ Good</option>
+        <option value="2">⭐️⭐️ Fair</option>
+        <option value="1">⭐️ Poor</option>
+      </select>
+      
+      <textarea 
+        name="Feedback" 
+        id="feedback" 
+        rows="4" 
+        placeholder="Write Your Feedback..." 
+        required 
+        style="
+          padding: 14px; 
+          border: 1px solid #d1d5db; 
+          border-radius: 10px; 
+          font-size: 15px;
+          background: #ffffff; 
+          transition: 0.3s;
+        " 
+        onfocus="this.style.borderColor='#3b82f6'; this.style.boxShadow='0 0 0 4px #bfdbfe';" 
+        onblur="this.style.borderColor='#d1d5db'; this.style.boxShadow='none';"
+      ></textarea>
+      
+      <button type="submit" style="
+        padding: 14px; 
+        background: linear-gradient(to right, #3b82f6, #60a5fa); 
+        color: white; 
+        font-weight: 700; 
+        font-size: 16px; 
+        border: none; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        transition: background 0.3s;
+      "
+      onmouseover="this.style.background='linear-gradient(to right, #2563eb, #3b82f6)';"
+      onmouseout="this.style.background='linear-gradient(to right, #3b82f6, #60a5fa)';"
+      >Submit Feedback</button>
+    </form>
+  </div>
+</section>
+ <div class="whatsapp-container">
+        <a href="https://wa.me/918896339793" class="whatsapp-float" target="_blank">
+            Contact Me
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" />
+        </a>
+    </div>
+
+
+
+  <footer>
+    © 2025 Surya | Portfolio Website
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+<script>
+  const feedbackForm = document.getElementById('feedbackForm');
+
+  feedbackForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    Swal.fire({
+      title: 'Confirm Submission',
+      text: "Are you sure you want to submit your feedback?",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3b82f6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Submit',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Submitting...',
+          allowOutsideClick: false,
+          didOpen: () => {
+            Swal.showLoading();
+          }
+        });
+
+        fetch(feedbackForm.action, {
+          method: 'POST',
+          body: new FormData(feedbackForm)
+        })
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Thank you!',
+            text: 'Your feedback has been submitted successfully.',
+            timer: 2000,
+            showConfirmButton: false
+          });
+
+          feedbackForm.reset();
+          setTimeout(fetchReviews, 3000); // Update reviews after 3s
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: 'Something went wrong. Please try again later.'
+          });
+          console.error('Error!', error.message);
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+
+</html>
