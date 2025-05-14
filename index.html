@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <style>
     * {
       margin: 0;
@@ -249,6 +250,14 @@ font-weight: 600;
             transition: all 0.3s ease;
             margin: 0 15px; /* Add some horizontal margin */
         }
+.profile-image {
+  width: 160px;           /* Adjust size as needed */
+  height: 160px;
+  object-fit: cover;      /* Ensures image fills the circle properly */
+  border-radius: 50%;     /* Makes it a perfect circle */
+  border: 4px solid #FFA500;  /* Optional: adds a nice border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+}
 
         .whatsapp-float img {
             height: 20px;
@@ -266,13 +275,112 @@ font-weight: 600;
                 padding: 8px 0;
             }
         }
+.about-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.about-heading i {
+  color: #FFA500;
+  margin-right: 10px;
+}
+
+.heading-underline {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 4px;
+  width: 60%;
+  background-color: #FFA500;
+  border-radius: 2px;
+}
+
+.about-cards-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.about-card {
+  flex: 0 0 auto;
+  width: 300px;
+  min-height: 150px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+}
+
+.about-cards-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.about-cards-scroll::-webkit-scrollbar-thumb {
+  background-color: #FFA500;
+  border-radius: 4px;
+}
+
+.about-cards-scroll::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+.about-card p {
+  font-size: 0.85rem;        /* Smaller text */
+  color: #444;               /* Slightly softer color for better readability */
+  font-weight: 500;          /* Lighter weight */
+  line-height: 1.5;          /* More spacing between lines */
+  margin: 0;                 /* Remove default paragraph margin */
+}
+.about-card {
+  display: flex;
+  align-items: center;        /* Vertically center content */
+  justify-content: center;    /* Horizontally center content */
+  text-align: center;         /* Center text inside */
+  padding: 20px;              /* Adequate spacing */
+  background-color: #f9f9f9;  /* Light background (optional) */
+  border-radius: 10px;        /* Rounded corners */
+  height: 180px;              /* Fixed height for consistency */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.about-card p {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+  max-width: 260px;           /* Prevent long lines */
+}
+
+@media screen and (max-width: 768px) {
+  .about-card {
+    height: auto;
+    padding: 15px;
+  }
+
+  .about-card p {
+    font-size: 0.85rem;
+  }
+}
+
+
+
 
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Hi, I'm Surya — Logistics Expert & Data Analyst</h1>
+    <h1>Hi, I'm Surya — Data Analyst & Logistics Expert </h1>
     <div class="skills-slider">
       <div class="skills-slider">
   <div class="slider-track">
@@ -301,41 +409,63 @@ font-weight: 600;
 
   </header>
 
-  <section class="about-section" id="about">
-    <h2 style="font-size: 2.8rem; font-weight: 800; color: #1a1a2e; position: relative; display: inline-block; padding-bottom: 12px;">
-  <i class="fas fa-user-circle" style="color: #FFA500; margin-right: 10px;"></i> About Me
-  <span style="position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; height: 4px; width: 60%; background-color: #FFA500; border-radius: 2px;"></span>
-</h2>
+<section style="text-align: center; margin-top: 40px;">
+  <img src="my.jpg" alt="Surya" class="profile-image">
+</section>
 
-    <div class="about-cards">
-      <div class="about-card" data-aos="zoom-in">
-        <p>Experienced Data Analyst with a strong foundation in data analysis, visualization, and data management.</p>
-      </div>
-      <div class="about-card" data-aos="zoom-in">
-        <p>Specialized in Excel, Power BI, and SQL with expertise in handling diverse logistics datasets.</p>
-      </div>
-      <div class="about-card" data-aos="zoom-in">
-        <p>Consistently learning and upgrading skills to stay aligned with latest industry trends.</p>
-      </div>
-      <div class="about-card" data-aos="zoom-in">
-        <p>Effective in tackling real-world data challenges and delivering business value.</p>
-      </div>
-      <div class="about-card" data-aos="zoom-in">
-        <p>Strong focus on impactful presentation skills to elevate deliverables.</p>
-      </div>
-      <div class="about-card" data-aos="zoom-in">
-        <p>I appreciate professionals taking time to explore my profile and projects.</p>
-      </div>
-      <div class="about-card" data-aos="zoom-in">
-        <p>Looking forward to connecting and exploring data-driven opportunities.</p>
-      </div>
-      <div class="about-card" data-aos="zoom-in">
-        <p>Sincere gratitude to everyone reviewing my portfolio. Let’s connect!</p>
-      </div>
+
+ <section class="about-section" id="about"
+style="
+    background-image: url('servicesb.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    font-size: 18px; 
+    color: white;>
+ <div style="text-align: center;">
+  <h2 style="font-size: 2.8rem; font-weight: 800; color: #1a1a2e; position: relative; display: inline-block; padding-bottom: 12px;">
+    <i class="fas fa-diagram-project" style="color: #FFA500; margin-right: 10px;"></i> About Me
+    <span style="position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; height: 4px; width: 60%; background-color: #FFA500; border-radius: 2px;"></span>
+  </h2>
+</div>
+
+  <div class="about-cards-scroll">
+    <div class="about-card" data-aos="zoom-in">
+      <p><span style="color: blue; font-weight: bold;">Experienced Data Analyst with a strong foundation in data analysis, visualization, and data management.</span></p>
     </div>
-  </section>
+    <div class="about-card" data-aos="zoom-in">
+      <p><span style="color: blue; font-weight: bold;">Specialized in Excel, Power BI, and SQL with expertise in handling diverse logistics datasets.</span></p>
+    </div>
+    <div class="about-card" data-aos="zoom-in">
+      <p><span style="color: blue; font-weight: bold;">Consistently learning and upgrading skills to stay aligned with latest industry trends.</span></p>
+    </div>
+    <div class="about-card" data-aos="zoom-in">
+      <p><span style="color: blue; font-weight: bold;">Effective in tackling real-world data challenges and delivering business value.</span></p>
+    </div>
+    <div class="about-card" data-aos="zoom-in">
+      <p><span style="color: blue; font-weight: bold;">Strong focus on impactful presentation skills to elevate deliverables.</span></p>
+    </div>
+    <div class="about-card" data-aos="zoom-in">
+      <p><span style="color: blue; font-weight: bold;">I appreciate professionals taking time to explore my profile and projects.</span></p>
+    </div>
+    <div class="about-card" data-aos="zoom-in">
+      <p><span style="color: blue; font-weight: bold;">Looking forward to connecting and exploring data-driven opportunities.</span></p>
+    </div>
+    <div class="about-card" data-aos="zoom-in">
+      <p><span style="color: blue; font-weight: bold;">Sincere gratitude to everyone reviewing my portfolio. Let’s connect!</span></p>
+    </div>
+  </div>
+</section>
 
-  <section class="projects-section" id="projects">
+
+  <section class="projects-section" id="projects"
+style="
+    background-image: url('blurr.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    font-size: 18px; 
+    color: white;>
   <div style="text-align: center;">
   <h2 style="font-size: 2.8rem; font-weight: 800; color: #1a1a2e; position: relative; display: inline-block; padding-bottom: 12px;">
     <i class="fas fa-diagram-project" style="color: #FFA500; margin-right: 10px;"></i> My Projects
@@ -380,8 +510,33 @@ font-weight: 600;
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Feedback Form Section -->
-<section style="margin-top: 40px; padding: 40px 20px;">
-  <h2 style="text-align:center; margin-bottom:20px; font-size: 32px; font-weight: 800; color: #1e3a8a;">Share Your Feedback</h2>
+<section style="
+  margin-top: 40px; 
+  padding: 40px 20px; 
+  background-image: url('contact.png'); 
+  background-size: cover; 
+  background-position: center; 
+  font-size: 18px; 
+  color: white;
+">
+
+    <div style="
+    background-color: grey; 
+    color: #000; 
+    padding: 15px 30px; 
+    border-radius: 10px; 
+    text-align: center; 
+    max-width: 400px; 
+    margin: 0 auto 30px auto; 
+    font-weight: bold; 
+    font-size: 30px;
+ color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  ">
+    Share Your Feedback
+  </div>
+
+
 
   <div style="
     max-width: 550px; 
